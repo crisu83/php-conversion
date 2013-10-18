@@ -1,11 +1,8 @@
-php-conversion
-==============
+<?php
 
-Library for converting units and sizes in PHP.
+ini_set('display_errors', 1);
+error_reporting(E_ALL ^ E_NOTICE);
 
-Example usage:
-
-```php
 use Crisu83\Conversion\Quantity\Length;
 use Crisu83\Conversion\Size\HatSize;
 use Crisu83\Conversion\Size\ShoeSize;
@@ -16,7 +13,7 @@ $length = new Length('1 m');
 echo $length . '<br>';
 echo $length->add('1 ft') . '<br>';
 echo $length->add('5 m')->subtract('2 ft') . '<br>';
-echo $length->to('yd') . '<br>'';
+echo $length->to('yd') . '<br>';
 
 echo '<br>';
 
@@ -31,21 +28,3 @@ $shoeSize = new ShoeSize('20 EUR');
 echo $shoeSize->to('US') . '<br>';
 echo $shoeSize->to('UK') . '<br>';
 echo $shoeSize->to('in') . '<br>';
-```
-
-Sample output:
-
-```
-1.00 m
-4.28 m
-2.72 m
-2.49 yd
-
-4 US
-4 7/8 UK
-15.748 in
-
-4.5 - 5 US
-3.5 - 4 UK
-4.625 in
-```
