@@ -21,7 +21,7 @@ echo $length->to('yd') . '<br>';
 echo '<br>';
 
 $hatSize = new HatSize('40 cm');
-echo $hatSize;
+echo $hatSize . '<br>';
 echo $hatSize->to('US') . '<br>';
 echo $hatSize->to('UK') . '<br>';
 echo $hatSize->to('in') . '<br>';
@@ -29,7 +29,7 @@ echo $hatSize->to('in') . '<br>';
 echo '<br>';
 
 $shoeSize = new ShoeSize('20 EUR');
-echo $shoeSize;
+echo $shoeSize . '<br>';
 echo $shoeSize->to('US') . '<br>';
 echo $shoeSize->to('UK') . '<br>';
 echo $shoeSize->to('in') . '<br>';
@@ -43,10 +43,12 @@ Sample output:
 2.72 m
 2.49 yd
 
+40 cm
 4 US
 4 7/8 UK
 15.748 in
 
+20 EUR
 4.5 - 5 US
 3.5 - 4 UK
 4.625 in
