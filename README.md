@@ -16,7 +16,7 @@ $length = new Length('1 m');
 echo $length . '<br>';
 echo $length->add('1 ft') . '<br>';
 echo $length->add('5 m')->subtract('2 ft') . '<br>';
-echo $length->to('yd') . '<br>'';
+echo $length->to('yd') . '<br>';
 
 echo '<br>';
 
