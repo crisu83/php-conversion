@@ -18,6 +18,7 @@ echo $length->to('yd') . '<br>';
 echo '<br>';
 
 $hatSize = new HatSize('40 cm');
+echo $hatSize;
 echo $hatSize->to('US') . '<br>';
 echo $hatSize->to('UK') . '<br>';
 echo $hatSize->to('in') . '<br>';
@@ -25,6 +26,7 @@ echo $hatSize->to('in') . '<br>';
 echo '<br>';
 
 $shoeSize = new ShoeSize('20 EUR');
+echo $shoeSize;
 echo $shoeSize->to('US') . '<br>';
 echo $shoeSize->to('UK') . '<br>';
 echo $shoeSize->to('in') . '<br>';
