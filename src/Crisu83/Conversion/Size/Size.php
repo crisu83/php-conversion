@@ -19,12 +19,12 @@ class Size
     /**
      * @var string
      */
-    protected $system;
+    protected $value;
 
     /**
      * @var string
      */
-    protected $value;
+    protected $system;
 
     /**
      * @var array conversion table between different systems
@@ -34,31 +34,13 @@ class Size
 
     /**
      * Creates a new size.
-     * @param string $size size string.
+     * @param mixed $size size value
+     * @param string $system sizing system
      */
-    public function __construct($size)
+    public function __construct($size, $system)
     {
-        list ($value, $system) = $this->parseSize($size);
         $this->system = $system;
-        $this->value = $value;
-    }
-
-    /**
-     * Parses a size string.
-     * @param string $size size string
-     * @return array an array with value and system
-     * @throws \Exception if the size cannot be parsed
-     */
-    protected function parseSize($size)
-    {
-        if (!is_string($size)) {
-            throw new \Exception('Size must be a string.');
-        }
-        $pieces = explode(' ', $size);
-        if (!isset($pieces[0], $pieces[1])) {
-            throw new \Exception(sprintf('Size quantity.'), $size);
-        }
-        return $pieces;
+        $this->value = (string)$size;
     }
 
     /**

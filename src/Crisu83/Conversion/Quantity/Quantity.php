@@ -17,9 +17,9 @@ namespace Crisu83\Conversion\Quantity;
 abstract class Quantity
 {
     /**
-     * @var string quantity name
+     * @var mixed current value
      */
-    protected $name;
+    protected $value;
 
     /**
      * @var string unit name
@@ -28,13 +28,9 @@ abstract class Quantity
 
     /**
      * @var string native unit name
+     * Override this in each quantity subclass.
      */
-    protected $native;
-
-    /**
-     * @var mixed current value
-     */
-    protected $value;
+    protected static $native;
 
     /**
      * @var array conversion map (unit => native unit)
@@ -44,31 +40,13 @@ abstract class Quantity
 
     /**
      * Creates a new quantity.
-     * @param string $quantity quantity string
+     * @param float $quantity quantity value
+     * @param string $unit quantity unit
      */
-    public function __construct($quantity)
+    public function __construct($quantity, $unit)
     {
-        list ($value, $unit) = $this->parseQuantity($quantity);
         $this->unit = $unit;
-        $this->value = (float)$value;
-    }
-
-    /**
-     * Parses a quantity string.
-     * @param string $quantity quantity string
-     * @return array an array with value and unit
-     * @throws \Exception if the quantity cannot be parsed
-     */
-    protected function parseQuantity($quantity)
-    {
-        if (!is_string($quantity)) {
-            throw new \Exception('Quantity must be a string.');
-        }
-        $pieces = explode(' ', $quantity);
-        if (!isset($pieces[0], $pieces[1])) {
-            throw new \Exception(sprintf('Malformed quantity.'), $quantity);
-        }
-        return $pieces;
+        $this->value = (float)$quantity;
     }
 
     /**
@@ -82,7 +60,7 @@ abstract class Quantity
         if (!isset(static::$conversionMap[$unit])) {
             throw new \Exception(sprintf(
                 'Conversion rate between "%s" and "%s" is not defined.',
-                $this->native,
+                static::$native,
                 $unit
             ));
         }
@@ -91,15 +69,17 @@ abstract class Quantity
 
     /**
      * Adds a quantity to this quantity.
-     * @param mixed $quantity quantity to add.
+     * @param float $quantity value to add
+     * @param string $unit quantity unit
      * @return Quantity this quantity
      */
-    public function add($quantity)
+    public function add($quantity, $unit = null)
     {
-        if (is_string($quantity)) {
-            /** @var Quantity $quantity */
-            $quantity = new static($quantity);
+        if ($unit === null) {
+            $unit = $this->unit;
         }
+        /** @var Quantity $quantity */
+        $quantity = new static($quantity, $unit);
         $quantity->to($this->unit);
         $this->value += $quantity->getValue();
         return $this;
@@ -107,15 +87,17 @@ abstract class Quantity
 
     /**
      * Subtracts a quantity from this quantity,
-     * @param mixed $quantity quantity to add.
+     * @param float $quantity value to subtract
+     * @param string $unit quantity unit
      * @return Quantity this quantity
      */
-    public function subtract($quantity)
+    public function sub($quantity, $unit = null)
     {
-        if (is_string($quantity)) {
-            /** @var Quantity $quantity */
-            $quantity = new static($quantity);
+        if ($unit === null) {
+            $unit = $this->unit;
         }
+        /** @var Quantity $quantity */
+        $quantity = new static($quantity, $unit);
         $quantity->to($this->unit);
         $this->value -= $quantity->getValue();
         return $this;

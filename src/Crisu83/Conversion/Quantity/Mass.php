@@ -17,6 +17,11 @@ namespace Crisu83\Conversion\Quantity;
 class Mass extends Quantity
 {
     /**
+     * @var string native unit name
+     */
+    protected static $native = Unit::GRAM;
+
+    /**
      * @var array conversion map (unit => native unit)
      */
     protected static $conversionMap = array(
@@ -31,14 +36,4 @@ class Mass extends Quantity
         Unit::SHORT_TON     => 907185,
         Unit::LONG_TON      => 1016046.9088,
     );
-
-    /**
-     * Creates a new quantity.
-     * @param string $quantity quantity string
-     */
-    public function __construct($quantity)
-    {
-        parent::__construct($quantity);
-        $this->native = Unit::GRAM;
-    }
-} 
+}

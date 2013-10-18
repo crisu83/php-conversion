@@ -17,6 +17,11 @@ namespace Crisu83\Conversion\Quantity;
 class Length extends Quantity
 {
     /**
+     * @var string native unit name
+     */
+    protected static $native = Unit::METRE;
+
+    /**
      * @var array conversion map (unit => native unit)
      */
     protected static $conversionMap = array(
@@ -30,14 +35,4 @@ class Length extends Quantity
         Unit::MILE          => 1609.34,
         Unit::NAUTICAL_MILE => 1852,
     );
-
-    /**
-     * Creates a new quantity.
-     * @param string $quantity quantity string
-     */
-    public function __construct($quantity)
-    {
-        parent::__construct($quantity);
-        $this->native = Unit::METRE;
-    }
 }
