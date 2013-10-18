@@ -17,6 +17,11 @@ namespace Crisu83\Conversion\Quantity;
 class Area extends Quantity
 {
     /**
+     * @var string native unit name
+     */
+    protected static $native = Unit::SQUARE_METRE;
+
+    /**
      * @var array conversion map (unit => native unit)
      */
     protected static $conversionMap = array(
@@ -29,14 +34,4 @@ class Area extends Quantity
         Unit::ACRE              => 247.105,
         Unit::SQUARE_MILE       => 2589988.110336,
     );
-
-    /**
-     * Creates a new quantity.
-     * @param string $quantity quantity string
-     */
-    public function __construct($quantity)
-    {
-        parent::__construct($quantity);
-        $this->native = Unit::SQUARE_METRE;
-    }
-} 
+}
