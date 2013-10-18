@@ -1,0 +1,20 @@
+{
+    "name": "crisu83/php-conversion",
+    "description": "Library for converting units and sizes.",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Christoffer Niska",
+            "email": "christoffer.niska@gmail.com",
+            "homepage": "http://www.cniska.net/"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-0": {
+            "Crisu83": "src/"
+        }
+    }
+}
