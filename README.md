@@ -3,12 +3,35 @@ php-conversion
 
 Library for converting units and sizes in PHP.
 
+## Units supported
+
+ * Angle
+ * Area
+ * Digital information
+ * Electric current
+ * Fuel consumption
+ * Length
+ * Mass
+ * Pressure
+ * Speed
+ * Temperature
+ * Time
+ * Velocity
+ * Volume
+
+## Sizes supported
+
+ * Hat size
+ * Child shoe size
+
+## Usage
+
 Example usage:
 
 ```php
-use Crisu83\Conversion\Quantity\Length;
-use Crisu83\Conversion\Size\HatSize;
-use Crisu83\Conversion\Size\ShoeSize;
+use Crisu83\Conversion\Quantity\Length\Length;
+use Crisu83\Conversion\Size\HatSize\HatSize;
+use Crisu83\Conversion\Size\ShoeSize\ChildShoeSize;
 
 require(dirname(__DIR__) . '/vendor/autoload.php');
 
@@ -28,7 +51,7 @@ echo $hatSize->to('in') . '<br>';
 
 echo '<br>';
 
-$shoeSize = new ShoeSize(20, 'EUR');
+$shoeSize = new ChildShoeSize(20, 'EUR');
 echo $shoeSize . '<br>';
 echo $shoeSize->to('US') . '<br>';
 echo $shoeSize->to('UK') . '<br>';

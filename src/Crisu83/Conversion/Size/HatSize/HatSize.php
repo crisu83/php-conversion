@@ -8,11 +8,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Crisu83\Conversion\Size;
+namespace Crisu83\Conversion\Size\HatSize;
+
+use Crisu83\Conversion\Size\Size;
 
 /**
  * Class HatSize
- * @package Crisu83\Conversion\Size
+ * @package Crisu83\Conversion\Size\HatSize
  */
 class HatSize extends Size
 {
@@ -37,5 +39,6 @@ class HatSize extends Size
         array('cm' => '48', 'UK' => '5 7/8',  'US' => '6',        'in' => '18.898'),
         array('cm' => '49', 'UK' => '6',      'US' => '6 1/8',    'in' => '19.291'),
         array('cm' => '50', 'UK' => '6 1/8',  'US' => '6 1/4',    'in' => '19.685'),
+        // todo: add more values
     );
 } 
