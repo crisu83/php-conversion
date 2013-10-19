@@ -8,12 +8,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Crisu83\Conversion\Quantity;
+namespace Crisu83\Conversion\Quantity\Velocity;
+
+use \Crisu83\Conversion\Quantity\Unit as BaseUnit;
 
 /**
  * Class Unit
- * @package Crisu83\Conversion\Quantity
+ * @package Crisu83\Conversion\Quantity\Velocity
  */
-class Unit
+class Unit extends BaseUnit
 {
-}
+    const METRE_PER_SECOND   = 'm/s';
+} 

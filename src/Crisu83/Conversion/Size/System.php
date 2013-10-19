@@ -16,16 +16,4 @@ namespace Crisu83\Conversion\Size;
  */
 class System
 {
-    // Shoe sizing systems
-    const SHOE_EUR  = 'EUR';
-    const SHOE_US   = 'US';
-    const SHOE_UK   = 'UK';
-    const SHOE_CM   = 'cm';
-    const SHOE_IN   = 'in';
-
-    // Hat sizing system
-    const HAT_CM    = 'cm';
-    const HAT_US    = 'US';
-    const HAT_UK    = 'UK';
-    const HAT_IN    = 'in';
 }

@@ -8,11 +8,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Crisu83\Conversion\Quantity;
+namespace Crisu83\Conversion\Quantity\Length;
+
+use Crisu83\Conversion\Quantity\Quantity;
 
 /**
  * Class Length
- * @package Crisu83\Conversion\Quantity
+ * @package Crisu83\Conversion\Quantity\Length
  */
 class Length extends Quantity
 {
@@ -30,7 +32,7 @@ class Length extends Quantity
         Unit::METRE         => 1,
         Unit::KILOMETRE     => 1000,
         Unit::INCH          => 0.0254,
-        Unit::FEET          => 0.3048,
+        Unit::FOOT          => 0.3048,
         Unit::YARD          => 0.9144,
         Unit::MILE          => 1609.34,
         Unit::NAUTICAL_MILE => 1852,
