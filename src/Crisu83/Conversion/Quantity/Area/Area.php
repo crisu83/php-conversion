@@ -8,11 +8,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Crisu83\Conversion\Quantity;
+namespace Crisu83\Conversion\Quantity\Area;
+
+use Crisu83\Conversion\Quantity\Quantity;
 
 /**
  * Class Area
- * @package Crisu83\Conversion\Quantity
+ * @package Crisu83\Conversion\Quantity\Area
  */
 class Area extends Quantity
 {

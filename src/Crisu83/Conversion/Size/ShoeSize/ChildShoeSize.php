@@ -8,13 +8,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Crisu83\Conversion\Size;
+namespace Crisu83\Conversion\Size\ShoeSize;
 
 /**
- * Class ShoeSize
- * @package Crisu83\Conversion\Size
+ * Class ChildShoe
+ * @package Crisu83\Conversion\Size\ShoeSize
  */
-class ShoeSize extends Size
+class ChildShoeSize extends ShoeSize
 {
     /**
      * @var array conversion table between different systems
