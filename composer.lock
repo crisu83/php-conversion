@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "852ad010cb971b8f03df82cd7572dfe8",
+    "hash": "dd95d5637dff71f1d3a9ed342ff148b9",
     "packages": [
 
     ],
@@ -290,48 +290,6 @@
                 "unit testing"
             ],
             "time": "2013-10-16 22:45:30"
-        },
-        {
-            "name": "crisu83/yii-composer",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Crisu83/yii-composer.git",
-                "reference": "de7c43d26752319b1b54e16db4c911820896fb7e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Crisu83/yii-composer/zipball/de7c43d26752319b1b54e16db4c911820896fb7e",
-                "reference": "de7c43d26752319b1b54e16db4c911820896fb7e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "yiisoft/yii": ">=1.1.13"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Crisu83": "/src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Christoffer Niska",
-                    "email": "christoffer.niska@gmail.com",
-                    "homepage": "http://www.cniska.net/"
-                }
-            ],
-            "description": "Composer callbacks for the Yii PHP framework.",
-            "keywords": [
-                "composer",
-                "yii"
-            ],
-            "time": "2013-08-20 18:50:34"
         },
         {
             "name": "fabpot/goutte",
@@ -1549,90 +1507,6 @@
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
             "time": "2013-09-22 18:04:39"
-        },
-        {
-            "name": "yiisoft/yii",
-            "version": "1.1.14",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii.git",
-                "reference": "f0fee98ee84f70f1f3652f65562c9670e919cb4e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii/zipball/f0fee98ee84f70f1f3652f65562c9670e919cb4e",
-                "reference": "f0fee98ee84f70f1f3652f65562c9670e919cb4e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.1.0"
-            },
-            "bin": [
-                "framework/yiic"
-            ],
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Qiang Xue",
-                    "email": "qiang.xue@gmail.com",
-                    "homepage": "http://www.yiiframework.com/",
-                    "role": "Founder and project lead"
-                },
-                {
-                    "name": "Alexander Makarov",
-                    "email": "sam@rmcreative.ru",
-                    "homepage": "http://rmcreative.ru/",
-                    "role": "Core framework development"
-                },
-                {
-                    "name": "Maurizio Domba",
-                    "homepage": "http://mdomba.info/",
-                    "role": "Core framework development"
-                },
-                {
-                    "name": "Carsten Brandt",
-                    "email": "mail@cebe.cc",
-                    "homepage": "http://cebe.cc/",
-                    "role": "Core framework development"
-                },
-                {
-                    "name": "Wei Zhuo",
-                    "email": "weizhuo@gmail.com",
-                    "role": "Project site maintenance and development"
-                },
-                {
-                    "name": "Sebastián Thierer",
-                    "email": "sebas@artfos.com",
-                    "role": "Component development"
-                },
-                {
-                    "name": "Jeffrey Winesett",
-                    "email": "jefftulsa@gmail.com",
-                    "role": "Documentation and marketing"
-                },
-                {
-                    "name": "Timur Ruziev",
-                    "email": "resurtm@gmail.com",
-                    "homepage": "http://resurtm.com/",
-                    "role": "Core framework development"
-                },
-                {
-                    "name": "Paul Klimov",
-                    "email": "klimov.paul@gmail.com",
-                    "role": "Core framework development"
-                }
-            ],
-            "description": "Yii Web Programming Framework",
-            "homepage": "http://www.yiiframework.com/",
-            "keywords": [
-                "framework",
-                "yii"
-            ],
-            "time": "2013-08-12 00:12:08"
         }
     ],
     "aliases": [
@@ -1640,8 +1514,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "codeception/codeception": 0,
-        "crisu83/yii-composer": 20
+        "codeception/codeception": 0
     },
     "platform": [
 
