@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "78bad3336633ba3bdda1ea12c2a4c7a3",
+    "hash": "852ad010cb971b8f03df82cd7572dfe8",
     "packages": [
 
     ],
@@ -293,7 +293,7 @@
         },
         {
             "name": "crisu83/yii-composer",
-            "version": "1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Crisu83/yii-composer.git",
@@ -1640,7 +1640,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "codeception/codeception": 0
+        "codeception/codeception": 0,
+        "crisu83/yii-composer": 20
     },
     "platform": [
 
