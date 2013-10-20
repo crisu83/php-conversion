@@ -6,6 +6,7 @@ php:
 before_script:
   - composer self-update
   - composer install --prefer-source
+  - chmod 0777 tests/_log
 
 script: vendor/bin/codecept run unit
 
