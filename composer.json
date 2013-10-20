@@ -13,22 +13,11 @@
     "require": {
     },
     "require-dev": {
-        "codeception/codeception": "@stable",
-        "crisu83/yii-composer": "dev-master"
+        "codeception/codeception": "@stable"
     },
     "autoload": {
         "psr-0": {
             "Crisu83": "src/"
         }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "Crisu83\\YiiComposer\\InstallHandler::setPermissions"
-        ]
-    },
-    "extra": {
-        "yii-install-writable": [
-            "tests/_log"
-        ]
     }
 }
