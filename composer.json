@@ -12,6 +12,9 @@
     ],
     "require": {
     },
+    "require-dev": {
+        "codeception/codeception": "@stable"
+    },
     "autoload": {
         "psr-0": {
             "Crisu83": "src/"
