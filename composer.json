@@ -14,7 +14,7 @@
     },
     "require-dev": {
         "codeception/codeception": "@stable",
-        "crisu83/yii-composer": "1.0.*"
+        "crisu83/yii-composer": "dev-master"
     },
     "autoload": {
         "psr-0": {
