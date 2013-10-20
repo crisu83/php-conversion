@@ -50,24 +50,6 @@ abstract class Quantity
     }
 
     /**
-     * Returns the conversion rate for a unit.
-     * @param string $unit unit name
-     * @return mixed conversion rate
-     * @throws \Exception if the conversion rate is not defined.
-     */
-    protected function getConversionRate($unit)
-    {
-        if (!isset(static::$conversionMap[$unit])) {
-            throw new \Exception(sprintf(
-                'Conversion rate between "%s" and "%s" is not defined.',
-                static::$native,
-                $unit
-            ));
-        }
-        return static::$conversionMap[$unit];
-    }
-
-    /**
      * Adds a quantity to this quantity.
      * @param float $quantity value to add
      * @param string $unit quantity unit
@@ -110,10 +92,28 @@ abstract class Quantity
      */
     public function to($unit)
     {
-        $value = $this->value / $this->getConversionRate($this->unit);
-        $this->value = $value * $this->getConversionRate($unit);
+        $value = $this->value * $this->getConversionRate($this->unit);
+        $this->value = $value / $this->getConversionRate($unit);
         $this->unit = $unit;
         return $this;
+    }
+
+    /**
+     * Returns the conversion rate for a unit.
+     * @param string $unit unit name
+     * @return mixed conversion rate
+     * @throws \Exception if the conversion rate is not defined.
+     */
+    protected function getConversionRate($unit)
+    {
+        if (!isset(static::$conversionMap[$unit])) {
+            throw new \Exception(sprintf(
+                'Conversion rate between "%s" and "%s" is not defined.',
+                static::$native,
+                $unit
+            ));
+        }
+        return static::$conversionMap[$unit];
     }
 
     /**
@@ -150,8 +150,17 @@ abstract class Quantity
      * Converts this quantity into a string
      * @return string this quantity as a string
      */
-    public function __toString()
+    public function out()
     {
         return $this->format() . ' ' . $this->unit;
+    }
+
+    /**
+     * Magic function for outputting this quantity.
+     * @return string this quantity as a string
+     */
+    public function __toString()
+    {
+        return $this->out();
     }
 }

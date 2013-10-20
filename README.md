@@ -62,9 +62,9 @@ Sample output:
 
 ```
 1.00 m
-4.28 m
-2.72 m
-2.49 yd
+1.30 m
+5.70 m
+6.23 yd
 
 40 cm
 4 US
