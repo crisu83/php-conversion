@@ -21,7 +21,7 @@ class DigitalInformation extends Quantity
     /**
      * @var string native unit name
      */
-    protected static $native = Unit::BYTE;
+    protected static $native = Unit::KILOBYTE;
 
     /**
      * @var array conversion map (unit => native unit)

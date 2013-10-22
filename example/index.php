@@ -3,11 +3,13 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL ^ E_NOTICE);
 
+use Crisu83\Conversion\Quantity\DigitalInformation\DigitalInformation;
 use Crisu83\Conversion\Quantity\Length\Length;
 use Crisu83\Conversion\Size\HatSize\HatSize;
 use Crisu83\Conversion\Size\ShoeSize\ChildShoeSize;
 
 use Crisu83\Conversion\Quantity\Length\Unit as LengthUnit;
+use Crisu83\Conversion\Quantity\DigitalInformation\Unit as DIUnit;
 use Crisu83\Conversion\Size\HatSize\System as HatSizeSystem;
 use Crisu83\Conversion\Size\ShoeSize\System as ShoeSizeSystem;
 
@@ -18,6 +20,14 @@ echo $length . '<br>';
 echo $length->add(1, LengthUnit::FOOT) . '<br>';
 echo $length->add(5)->sub(2, LengthUnit::FOOT) . '<br>';
 echo $length->to(LengthUnit::YARD) . '<br>';
+
+echo '<br>';
+
+$di = new DigitalInformation(1000, DIUnit::MEGABYTE);
+echo $di . '<br>';
+echo $di->to(DIUnit::BIT)->out(2, '.', '') . '<br>';
+echo $di->to(DIUnit::GIGABIT) . '<br>';
+echo $di->to(DIUnit::TERABYTE)->out(10) . '<br>';
 
 echo '<br>';
 
