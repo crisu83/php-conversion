@@ -47,6 +47,14 @@ echo $length->to(LengthUnit::YARD) . '<br>';
 
 echo '<br>';
 
+$di = new DigitalInformation(1000, DIUnit::MEGABYTE);
+echo $di . '<br>';
+echo $di->to(DIUnit::BIT)->out(2, '.', '') . '<br>';
+echo $di->to(DIUnit::GIGABIT) . '<br>';
+echo $di->to(DIUnit::TERABYTE)->out(10) . '<br>';
+
+echo '<br>';
+
 $hatSize = new HatSize(40, HatSizeSystem::CENTIMETRE);
 echo $hatSize . '<br>';
 echo $hatSize->to(HatSizeSystem::AMERICAN) . '<br>';
@@ -69,6 +77,11 @@ Sample output:
 1.30 m
 5.70 m
 6.23 yd
+
+1,000.00 MB
+8388629474.89 b
+7.81 Gb
+0.0009534451 TB
 
 40 cm
 4 US
