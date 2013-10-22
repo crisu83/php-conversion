@@ -140,6 +140,18 @@ abstract class Quantity
     }
 
     /**
+     * Converts this quantity into a string
+     * @param int $decimals number of decimals (default to 2)
+     * @param string $decPoint decimal symbol (defaults to '.')
+     * @param string $thousandSep thousand separator (defaults to ',')
+     * @return string this quantity as a string
+     */
+    public function out($decimals = 2, $decPoint = '.', $thousandSep = ',')
+    {
+        return $this->format($decimals, $decPoint, $thousandSep) . ' ' . $this->unit;
+    }
+
+    /**
      * Returns the unit for this quantity.
      * @return string unit
      */
@@ -150,20 +162,11 @@ abstract class Quantity
 
     /**
      * Returns the value for this quantity.
-     * @return float value
+     * @return mixed value
      */
     public function getValue()
     {
-        return (float)$this->value;
-    }
-
-    /**
-     * Converts this quantity into a string
-     * @return string this quantity as a string
-     */
-    public function out()
-    {
-        return $this->format() . ' ' . $this->unit;
+        return $this->value;
     }
 
     /**
