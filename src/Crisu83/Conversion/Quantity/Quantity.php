@@ -46,7 +46,7 @@ abstract class Quantity
     public function __construct($quantity, $unit)
     {
         $this->unit = $unit;
-        $this->value = (float)$quantity;
+        $this->value = $quantity;
     }
 
     /**
@@ -92,10 +92,21 @@ abstract class Quantity
      */
     public function to($unit)
     {
-        $value = $this->value * $this->getConversionRate($this->unit);
-        $this->value = $value / $this->getConversionRate($unit);
+        $this->value = $this->convert($this->unit, $unit, $this->value);
         $this->unit = $unit;
         return $this;
+    }
+
+    /**
+     * Converts a value from one unit to another.
+     * @param string $from unit to convert from
+     * @param string $to unit to convert to
+     * @param mixed $value value to convert
+     * @return float converted value
+     */
+    protected function convert($from, $to, $value)
+    {
+        return ($value * $this->getConversionRate($from)) / $this->getConversionRate($to);
     }
 
     /**
