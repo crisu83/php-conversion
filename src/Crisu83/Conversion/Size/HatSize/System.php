@@ -18,8 +18,8 @@ use \Crisu83\Conversion\Size\System as BaseSystem;
  */
 class System extends BaseSystem
 {
-    const CM    = 'cm';
-    const US    = 'US';
-    const UK    = 'UK';
-    const IN    = 'in';
+    const CENTIMETRE    = 'cm';
+    const AMERICAN      = 'US';
+    const BRITISH       = 'UK';
+    const INCH          = 'in';
 }

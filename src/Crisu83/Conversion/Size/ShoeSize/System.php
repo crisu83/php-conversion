@@ -18,9 +18,9 @@ use \Crisu83\Conversion\Size\System as BaseSystem;
  */
 class System extends BaseSystem
 {
-    const EUR   = 'EUR';
-    const US    = 'US';
-    const UK    = 'UK';
-    const CM    = 'cm';
-    const IN    = 'in';
+    const EUROPEAN      = 'EUR';
+    const AMERICAN      = 'US';
+    const BRITISH       = 'UK';
+    const CENTIMETRE    = 'cm';
+    const INCH          = 'in';
 }

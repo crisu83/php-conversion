@@ -7,26 +7,30 @@ use Crisu83\Conversion\Quantity\Length\Length;
 use Crisu83\Conversion\Size\HatSize\HatSize;
 use Crisu83\Conversion\Size\ShoeSize\ChildShoeSize;
 
+use Crisu83\Conversion\Quantity\Length\Unit as LengthUnit;
+use Crisu83\Conversion\Size\HatSize\System as HatSizeSystem;
+use Crisu83\Conversion\Size\ShoeSize\System as ShoeSizeSystem;
+
 require(dirname(__DIR__) . '/vendor/autoload.php');
 
-$length = new Length(1, 'm');
+$length = new Length(1, LengthUnit::METRE);
 echo $length . '<br>';
-echo $length->add(1, 'ft') . '<br>';
-echo $length->add(5)->sub(2, 'ft') . '<br>';
-echo $length->to('yd') . '<br>';
+echo $length->add(1, LengthUnit::FOOT) . '<br>';
+echo $length->add(5)->sub(2, LengthUnit::FOOT) . '<br>';
+echo $length->to(LengthUnit::YARD) . '<br>';
 
 echo '<br>';
 
-$hatSize = new HatSize(40, 'cm');
+$hatSize = new HatSize(40, HatSizeSystem::CENTIMETRE);
 echo $hatSize . '<br>';
-echo $hatSize->to('US') . '<br>';
-echo $hatSize->to('UK') . '<br>';
-echo $hatSize->to('in') . '<br>';
+echo $hatSize->to(HatSizeSystem::AMERICAN) . '<br>';
+echo $hatSize->to(HatSizeSystem::BRITISH) . '<br>';
+echo $hatSize->to(HatSizeSystem::INCH) . '<br>';
 
 echo '<br>';
 
-$shoeSize = new ChildShoeSize(20, 'EUR');
+$shoeSize = new ChildShoeSize(20, ShoeSizeSystem::EUROPEAN);
 echo $shoeSize . '<br>';
-echo $shoeSize->to('US') . '<br>';
-echo $shoeSize->to('UK') . '<br>';
-echo $shoeSize->to('in') . '<br>';
+echo $shoeSize->to(ShoeSizeSystem::AMERICAN) . '<br>';
+echo $shoeSize->to(ShoeSizeSystem::BRITISH) . '<br>';
+echo $shoeSize->to(ShoeSizeSystem::INCH) . '<br>';
