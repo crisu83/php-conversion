@@ -30,10 +30,12 @@ Example usage:
 
 ```php
 use Crisu83\Conversion\Quantity\Length\Length;
+use Crisu83\Conversion\Quantity\DigitalInformation\DigitalInformation;
 use Crisu83\Conversion\Size\HatSize\HatSize;
 use Crisu83\Conversion\Size\ShoeSize\ChildShoeSize;
 
 use Crisu83\Conversion\Quantity\Length\Unit as LengthUnit;
+use Crisu83\Conversion\Quantity\DigitalInformation\Unit as DIUnit;
 use Crisu83\Conversion\Size\HatSize\System as HatSizeSystem;
 use Crisu83\Conversion\Size\ShoeSize\System as ShoeSizeSystem;
 
