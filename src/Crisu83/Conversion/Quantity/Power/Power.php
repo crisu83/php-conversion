@@ -27,8 +27,8 @@ class Power extends Quantity
      * @var array conversion map (unit => native unit)
      */
     protected static $conversionMap = array(
-        Unit::WATT   => 1,
-        Unit::KILOWATT   => 1000,
-        Unit::MEGAWATT   => 1000000,
+        Unit::WATT      => 1,
+        Unit::KILOWATT  => 1000,
+        Unit::MEGAWATT  => 1000000,
     );
 }
