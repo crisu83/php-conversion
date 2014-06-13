@@ -5,18 +5,23 @@ Library for converting units and sizes in PHP.
 
 ## Units supported
 
+ * Acceleration
  * Angle
  * Area
  * Digital information
  * Electric current
+ * Frequency
  * Fuel consumption
  * Length
+ * Luminous Intensity
  * Mass
+ * Power
  * Pressure
  * Speed
  * Temperature
  * Time
  * Velocity
+ * Voltage
  * Volume
 
 ## Sizes supported
