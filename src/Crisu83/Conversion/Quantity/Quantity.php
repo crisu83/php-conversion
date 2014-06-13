@@ -98,6 +98,15 @@ abstract class Quantity
     }
 
     /**
+     * Converts this quantity to native unit.
+     * @return Quantity this quantity
+     */
+    public function toNativeUnit()
+    {
+        return $this->to($this->native);
+    }
+
+    /**
      * Converts a value from one unit to another.
      * @param string $from unit to convert from
      * @param string $to unit to convert to
