@@ -20,5 +20,5 @@ class Unit extends BaseUnit
 {
     const JOULE         = 'J';
     const CALORIE       = 'Cal';
-    const KILOWATT_HOUR = 'MW';
+    const KILOWATT_HOUR = 'kWh';
 }
