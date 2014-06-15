@@ -13,8 +13,8 @@ namespace Crisu83\Conversion\Quantity\Energy;
 use Crisu83\Conversion\Quantity\Quantity;
 
 /**
- * Class Power
- * @package Crisu83\Conversion\Quantity\Power
+ * Class Energy
+ * @package Crisu83\Conversion\Quantity\Energy
  */
 class Energy extends Quantity
 {
