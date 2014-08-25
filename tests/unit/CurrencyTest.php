@@ -6,11 +6,6 @@ class CurrencyTest extends \Codeception\TestCase\Test
 {
 
     /**
-     * @var \CodeGuy
-     */
-    protected $codeGuy;
-
-    /**
      * @return CurrencyData
      */
     private function getCurrencyData()
@@ -25,37 +20,37 @@ class CurrencyTest extends \Codeception\TestCase\Test
         return $currencyData;
     }
 
-    public function testCanConvertCurrency()
+    public function testCurrencyCanConvertCurrency()
     {
         $currency = new Currency(1, 'EUR', $this->getCurrencyData());
         $this->assertEquals('1.00', $currency->to('USD')->format());
     }
 
-    public function testCanConvertToEuro()
+    public function testCurrencyCanConvertToEuro()
     {
         $currency = new Currency(100, 'CAD', $this->getCurrencyData());
         $this->assertEquals('500.00', $currency->to('EUR')->format());
     }
 
-    public function testCanConvertToDkk()
+    public function testCurrencyCanConvertToDkk()
     {
         $currency = new Currency(100, 'DKK', $this->getCurrencyData());
         $this->assertEquals('750.00', $currency->to('EUR')->format());
     }
 
-    public function testCanConvertToSek()
+    public function testCurrencyCanConvertToSek()
     {
         $currency = new Currency(100, 'EUR', $this->getCurrencyData());
         $this->assertEquals('10.93', $currency->to('SEK')->format());
     }
 
-    public function testCanConvertFromUsdToCad()
+    public function testCurrencyCanConvertFromUsdToCad()
     {
         $currency = new Currency(1, 'USD', $this->getCurrencyData());
         $this->assertEquals('0.20', $currency->to('CAD')->format());
     }
 
-    public function testCanAddAndSubSameCurrency()
+    public function testCurrencyCanAddAndSubSameCurrency()
     {
         $currency = new Currency(1, 'EUR', $this->getCurrencyData());
         $currency->add(5); // 6 eur
@@ -63,7 +58,7 @@ class CurrencyTest extends \Codeception\TestCase\Test
         $this->assertEquals('4.00', $currency->to('EUR')->format());
     }
 
-    public function testCanAddAndSubDifferentCurriencies()
+    public function testCurrencyCanAddAndSubDifferentCurriencies()
     {
         $currency = new Currency(1, 'USD', $this->getCurrencyData());
         $currency->add(1, 'DKK');
@@ -71,7 +66,7 @@ class CurrencyTest extends \Codeception\TestCase\Test
         $this->assertEquals('8.50 EUR', $currency->toNativeUnit());
     }
 
-    public function testCanAddAndSubDifferentCurriencies_2()
+    public function testCurrencyCanAddAndSubDifferentCurriencies_2()
     {
         $currency = new Currency(100, 'EUR', $this->getCurrencyData());
         $currency->add(1, 'SEK');
@@ -81,7 +76,7 @@ class CurrencyTest extends \Codeception\TestCase\Test
         $this->assertEquals('AUD', $currency->getUnit());
     }
 
-    public function testUnknownCurrency()
+    public function testCurrencyUnknownCurrency()
     {
         $this->setExpectedException('Exception');
         $currency = new Currency(100, 'EUR', $this->getCurrencyData());
