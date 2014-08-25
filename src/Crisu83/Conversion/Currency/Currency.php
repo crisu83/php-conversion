@@ -8,13 +8,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Crisu83\Conversion\Quantity;
+namespace Crisu83\Conversion\Currency;
 
 /**
- * Class Quantity
- * @package Crisu83\Conversion\Quantity
+ * Class Currency
+ * @package Crisu83\Conversion\Currency
  */
-abstract class Quantity
+class Currency
 {
     /**
      * @var mixed current value
@@ -28,7 +28,7 @@ abstract class Quantity
 
     /**
      * @var string native unit name
-     * Override this in each quantity subclass.
+     * Override this in each currency subclass.
      */
     protected static $native;
 
@@ -39,21 +39,29 @@ abstract class Quantity
     protected static $conversionMap = array();
 
     /**
+     * @var CurrencyData currency data
+     */
+    private $currencyData;
+
+    /**
      * Creates a new quantity.
      * @param float $quantity quantity value
      * @param string $unit quantity unit
+     * @param CurrencyData $currencyData
      */
-    public function __construct($quantity, $unit)
+    public function __construct($quantity, $unit, CurrencyData $currencyData)
     {
         $this->unit = $unit;
         $this->value = $quantity;
+        $this->currencyData = $currencyData;
+        $this->setCurrencyData($currencyData);
     }
 
     /**
      * Adds a quantity to this quantity.
      * @param float $quantity value to add
      * @param string $unit quantity unit
-     * @return Quantity this quantity
+     * @return Currency this quantity
      */
     public function add($quantity, $unit = null)
     {
@@ -61,8 +69,8 @@ abstract class Quantity
             $unit = $this->unit;
         }
 
-        $quantity = new static($quantity, $unit);
-        /** @var Quantity $quantity */
+        $quantity = new static($quantity, $unit, $this->currencyData);
+        /** @var Currency $quantity */
         $quantity->to($this->unit);
         $this->value += $quantity->getValue();
         return $this;
@@ -72,7 +80,7 @@ abstract class Quantity
      * Subtracts a quantity from this quantity,
      * @param float $quantity value to subtract
      * @param string $unit quantity unit
-     * @return Quantity this quantity
+     * @return Currency this quantity
      */
     public function sub($quantity, $unit = null)
     {
@@ -80,8 +88,8 @@ abstract class Quantity
             $unit = $this->unit;
         }
 
-        $quantity = new static($quantity, $unit);
-        /** @var Quantity $quantity */
+        $quantity = new static($quantity, $unit, $this->currencyData);
+        /** @var Currency $quantity */
         $quantity->to($this->unit);
         $this->value -= $quantity->getValue();
         return $this;
@@ -90,7 +98,7 @@ abstract class Quantity
     /**
      * Converts this quantity to another unit.
      * @param string $unit unit to convert to
-     * @return Quantity this quantity
+     * @return Currency this quantity
      */
     public function to($unit)
     {
@@ -101,7 +109,7 @@ abstract class Quantity
 
     /**
      * Converts this quantity to native unit.
-     * @return Quantity this quantity
+     * @return Currency this quantity
      */
     public function toNativeUnit()
     {
@@ -188,4 +196,11 @@ abstract class Quantity
     {
         return $this->out();
     }
+
+    private function setCurrencyData(CurrencyData $currencyData)
+    {
+        self::$conversionMap = $currencyData->getCurrencies();
+        self::$native = $currencyData->getNative();
+    }
+
 }
