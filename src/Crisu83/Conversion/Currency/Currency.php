@@ -44,17 +44,58 @@ class Currency
     private $currencyData;
 
     /**
-     * Creates a new quantity.
-     * @param float $quantity quantity value
-     * @param string $unit quantity unit
+     * Creates a new currency conversion.
+     * @param float $value currency value
+     * @param string $fromCurrency currency
      * @param CurrencyData $currencyData
      */
-    public function __construct($quantity, $unit, CurrencyData $currencyData)
+    public function __construct($value = null, $fromCurrency = null, CurrencyData $currencyData = null)
     {
-        $this->unit = $unit;
-        $this->value = $quantity;
-        $this->currencyData = $currencyData;
-        $this->setCurrencyData($currencyData);
+        if ($value !== null) {
+            $this->setValue($value);
+        }
+
+        if ($fromCurrency !== null) {
+            $this->setFromUnit($fromCurrency);
+        }
+
+        if ($currencyData !== null) {
+            $this->setCurrencyData($currencyData);
+        }
+    }
+
+    /**
+     * Sets the currency value
+     * @param float $value currency value
+     * @return Currency
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+        return $this;
+    }
+
+    /**
+     * Sets the currency
+     * @param string $fromCurrency currency
+     * @return Currency
+     */
+    public function setFromUnit($fromCurrency)
+    {
+        $this->unit = $fromCurrency;
+        return $this;
+    }
+
+    /**
+     * Sets the currency conversion data
+     * @param CurrencyData $currencyData
+     * @return $this
+     */
+    public function setCurrencyData(CurrencyData $currencyData)
+    {
+        self::$conversionMap = $currencyData->getCurrencies();
+        self::$native = $currencyData->getNative();
+        return $this;
     }
 
     /**
@@ -195,12 +236,6 @@ class Currency
     public function __toString()
     {
         return $this->out();
-    }
-
-    private function setCurrencyData(CurrencyData $currencyData)
-    {
-        self::$conversionMap = $currencyData->getCurrencies();
-        self::$native = $currencyData->getNative();
     }
 
 }
