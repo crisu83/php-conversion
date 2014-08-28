@@ -77,11 +77,29 @@ class Size
     }
 
     /**
+     * Get the system
+     * @return string
+     */
+    public function getSystem()
+    {
+        return $this->system;
+    }
+
+    /**
      * Converts this size into a string
-     * @return string this size as a string
+     * @return string this size as a string without system
+     */
+    public function format()
+    {
+        return $this->value;
+    }
+
+    /**
+     * Converts this size into a string
+     * @return string this size as a string with system
      */
     public function __toString()
     {
-        return $this->value . ' ' . $this->system;
+        return sprintf('%s %s', $this->format(), $this->getSystem());
     }
 }

@@ -45,4 +45,23 @@ class LengthTest extends \Codeception\TestCase\Test
         $this->assertEquals('1.234,568', $length->format(3, ',', '.'));
         $this->assertEquals('1234.6', $length->format(1, '.', ''));
     }
+
+    public function testUnknownRate()
+    {
+        $this->setExpectedException('Exception');
+        $length = new Length(1, 'foo');
+        $this->assertEquals(1, $length->to('bar'));
+    }
+
+    public function testGetUnit()
+    {
+        $length = new Length(1234.56789, 'm');
+        $this->assertEquals('m', $length->getUnit());
+    }
+
+    public function testToString()
+    {
+        $length = new Length(1234.56789, 'm');
+        $this->assertEquals('1,234.57 m', $length->__toString());
+    }
 }
