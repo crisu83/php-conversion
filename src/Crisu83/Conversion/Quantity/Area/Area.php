@@ -28,7 +28,7 @@ class Area extends Quantity
      */
     protected static $conversionMap = array(
         Unit::SQUARE_METRE      => 1,
-        Unit::HECTARE           => 100,
+        Unit::HECTARE           => 10000,
         Unit::SQUARE_KILOMETRE  => 1000000,
         Unit::SQUARE_INCH       => 0.00064516,
         Unit::SQUARE_FEET       => 0.09290304,
