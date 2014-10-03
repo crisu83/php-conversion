@@ -31,7 +31,7 @@ class Mass extends Quantity
         Unit::MILLIGRAM     => 1e-6,
         Unit::GRAM          => 0.001,
         Unit::KILOGRAM      => 1,
-        Unit::METRIC_TON    => 100,
+        Unit::METRIC_TON    => 1000,
         Unit::OUNCE         => 0.0283495,
         Unit::POUND         => 0.453592,
         Unit::STONE         => 6.35029,
