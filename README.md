@@ -1,5 +1,6 @@
 php-conversion
 ==============
+[![Build Status](https://travis-ci.org/crisu83/php-conversion.png?branch=master)](https://travis-ci.org/crisu83/php-conversion)
 
 Library for converting units and sizes in PHP.
 
@@ -29,13 +30,21 @@ Library for converting units and sizes in PHP.
  * Hat size
  * Child shoe size
 
+## Number base supported
+
+ * Binary
+ * Octal
+ * Decimal
+ * Hexadecimal
+
 ## Usage
 
 Example usage:
 
 ```php
-use Crisu83\Conversion\Quantity\Length\Length;
 use Crisu83\Conversion\Quantity\DigitalInformation\DigitalInformation;
+use Crisu83\Conversion\Quantity\Length\Length;
+use Crisu83\Conversion\NumberBase\NumberBase;
 use Crisu83\Conversion\Size\HatSize\HatSize;
 use Crisu83\Conversion\Size\ShoeSize\ChildShoeSize;
 
@@ -61,6 +70,13 @@ echo $di->to(DIUnit::GIGABIT) . '<br>';
 echo $di->to(DIUnit::TERABYTE)->out(10) . '<br>';
 
 echo '<br>';
+
+$number = new NumberBase("0xff", NumberBase::HEXADECIMAL);
+echo $number .'<br>';
+echo $number->to(NumberBase::DECIMAL).'<br>';
+echo $number->to(NumberBase::OCTAL).'<br>';
+echo $number->to(NumberBase::BINARY).'<br>';
+
 
 $hatSize = new HatSize(40, HatSizeSystem::CENTIMETRE);
 echo $hatSize . '<br>';
@@ -89,6 +105,11 @@ Sample output:
 8388629474.89 b
 7.81 Gb
 0.0009534451 TB
+
+0xff
+255
+o377
+b11111111
 
 40 cm
 4 US
