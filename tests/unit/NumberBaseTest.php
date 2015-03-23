@@ -16,6 +16,21 @@ class NumberBaseTest extends \Codeception\TestCase\Test
         $this->assertEquals(16, $number->__toString());
     }
 
+    public function testNumberFormatDetection()
+    {
+        $number = new NumberBase("0xff");
+        $this->assertEquals(NumberBase::HEXADECIMAL, $number->getUnit());
+
+        $number = new NumberBase("b1010");
+        $this->assertEquals(NumberBase::BINARY, $number->getUnit());
+
+        $number = new NumberBase("o7");
+        $this->assertEquals(NumberBase::OCTAL, $number->getUnit());
+
+        $number = new NumberBase("77");
+        $this->assertEquals(NumberBase::DECIMAL, $number->getUnit());
+    }
+
     public function testNumberBaseConvertDecimalToHex()
     {
         $numberBase = new NumberBase(16, NumberBase::DECIMAL);
