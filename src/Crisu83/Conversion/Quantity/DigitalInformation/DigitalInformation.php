@@ -39,5 +39,11 @@ class DigitalInformation extends Quantity
         Unit::TERABYTE  => 1.074e+9,
         Unit::PETABIT   => 1.374e+11,
         Unit::PETABYTE  => 1.1e+12,
+        Unit::EXABIT    => '1152921504606846976',
+        Unit::EXABYTE   => '9223372036854775808',
+        Unit::ZETTABIT  => '1180591620717411303424',
+        Unit::ZETTABYTE => '9444732965739290427392',
+        Unit::YOTTABIT  => '1208925819614629174706176',
+        Unit::YOTTABYTE => '9671406556917033397649408',
     );
 }

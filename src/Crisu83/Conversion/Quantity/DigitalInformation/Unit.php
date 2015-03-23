@@ -30,4 +30,10 @@ class Unit extends BaseUnit
     const TERABYTE  = 'TB';
     const PETABIT   = 'Pb';
     const PETABYTE  = 'PB';
+    const EXABIT    = 'Eb';
+    const EXABYTE   = 'EB';
+    const ZETTABIT  = 'Zb';
+    const ZETTABYTE = 'ZB';
+    const YOTTABIT  = 'Yb';
+    const YOTTABYTE = 'YB';
 }
