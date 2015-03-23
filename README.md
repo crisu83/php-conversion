@@ -72,11 +72,12 @@ echo $di->to(DIUnit::TERABYTE)->out(10) . '<br>';
 echo '<br>';
 
 $number = new NumberBase("0xff", NumberBase::HEXADECIMAL);
-echo $number .'<br>';
-echo $number->to(NumberBase::DECIMAL).'<br>';
-echo $number->to(NumberBase::OCTAL).'<br>';
-echo $number->to(NumberBase::BINARY).'<br>';
+echo $number . '<br>';
+echo $number->to(NumberBase::DECIMAL) . '<br>';
+echo $number->to(NumberBase::OCTAL) . '<br>';
+echo $number->to(NumberBase::BINARY) . '<br>';
 
+echo '<br>';
 
 $hatSize = new HatSize(40, HatSizeSystem::CENTIMETRE);
 echo $hatSize . '<br>';
