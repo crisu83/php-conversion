@@ -29,6 +29,13 @@ Library for converting units and sizes in PHP.
  * Hat size
  * Child shoe size
 
+## Number base supported
+
+ * Binary
+ * Octal
+ * Decimal
+ * Hexadecimal
+
 ## Usage
 
 Example usage:
