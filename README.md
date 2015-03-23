@@ -1,6 +1,6 @@
 php-conversion
 ==============
-[![Build Status](https://travis-ci.org/crisu83/php-conversion?branch=master)](https://travis-ci.org/crisu83/php-conversion)
+[![Build Status](https://travis-ci.org/crisu83/php-conversion.png?branch=master)](https://travis-ci.org/crisu83/php-conversion)
 
 Library for converting units and sizes in PHP.
 
