@@ -43,6 +43,10 @@ class NumberBase
             $this->setUnit($unit);
         }
 
+        if ($unit === null && $value !== null) {
+            $this->setUnit(self::getNumberBaseFromString($value));
+        }
+
         if ($value !== null) {
             $this->setValue($value);
         }
@@ -68,6 +72,34 @@ class NumberBase
     {
         $this->unit = $unit;
         return $this;
+    }
+
+    public function getUnit()
+    {
+        return $this->unit;
+    }
+
+    /**
+     * Recognize current number base of string
+     * @param string $value
+     * @return int
+     * @throws \Exception
+     */
+    public static function getNumberBaseFromString($value)
+    {
+        if (substr($value, 0, 1) == 'b')
+            return self::BINARY;
+
+        if (substr($value, 0, 1) == 'o')
+            return self::OCTAL;
+
+        if (substr($value, 0, 2) == '0x')
+            return self::HEXADECIMAL;
+
+        if (is_numeric($value))
+            return self::DECIMAL;
+
+        throw new \Exception ("not a number ".$value);
     }
 
     protected function parseValue($value)
