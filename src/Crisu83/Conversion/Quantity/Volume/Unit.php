@@ -21,7 +21,10 @@ class Unit extends BaseUnit
     // Metric system
     const MILLILITRE        = 'mL';
     const LITRE             = 'L';
+    const CUBIC_MILLIMETRE  = 'mm^3';
+    const CUBIC_CENTIMETRE  = 'cm^3';
     const CUBIC_METRE       = 'm^3';
+
     // Imperial system
     const GALLON            = 'gal';
     const QUART             = 'qt';
