@@ -33,7 +33,7 @@ class Area extends Quantity
         Unit::SQUARE_INCH       => 0.00064516,
         Unit::SQUARE_FEET       => 0.09290304,
         Unit::SQUARE_YARD       => 0.83612736,
-        Unit::ACRE              => 247.105,
+        Unit::ACRE              => 4046.8564224,
         Unit::SQUARE_MILE       => 2589988.110336,
     );
 }
