@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Php-conversion by crisu83</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Php-conversion</h1>
+      <h2 class="project-tagline">Library for converting units and sizes in PHP.</h2>
+      <a href="https://github.com/crisu83/php-conversion" class="btn">View on GitHub</a>
+      <a href="https://github.com/crisu83/php-conversion/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/crisu83/php-conversion/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="php-conversion" class="anchor" href="#php-conversion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>php-conversion</h1>
+
+<p><a href="https://travis-ci.org/crisu83/php-conversion"><img src="https://travis-ci.org/crisu83/php-conversion.png?branch=master" alt="Build Status"></a></p>
+
+<p>Library for converting units and sizes in PHP.</p>
+
+<h2>
+<a id="units-supported" class="anchor" href="#units-supported" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Units supported</h2>
+
+<ul>
+<li>Acceleration</li>
+<li>Angle</li>
+<li>Area</li>
+<li>Digital information</li>
+<li>Electric current</li>
+<li>Frequency</li>
+<li>Fuel consumption</li>
+<li>Length</li>
+<li>Luminous Intensity</li>
+<li>Mass</li>
+<li>Power</li>
+<li>Pressure</li>
+<li>Speed</li>
+<li>Temperature</li>
+<li>Time</li>
+<li>Velocity</li>
+<li>Voltage</li>
+<li>Volume</li>
+</ul>
+
+<h2>
+<a id="sizes-supported" class="anchor" href="#sizes-supported" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sizes supported</h2>
+
+<ul>
+<li>Hat size</li>
+<li>Child shoe size</li>
+</ul>
+
+<h2>
+<a id="number-base-supported" class="anchor" href="#number-base-supported" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Number base supported</h2>
+
+<ul>
+<li>Binary</li>
+<li>Octal</li>
+<li>Decimal</li>
+<li>Hexadecimal</li>
+</ul>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Example usage:</p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Crisu83\Conversion\Quantity\DigitalInformation\DigitalInformation</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Crisu83\Conversion\Quantity\Length\Length</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Crisu83\Conversion\NumberBase\NumberBase</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Crisu83\Conversion\Size\HatSize\HatSize</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Crisu83\Conversion\Size\ShoeSize\ChildShoeSize</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Crisu83\Conversion\Quantity\Length\Unit</span> <span class="pl-k">as</span> <span class="pl-c1">LengthUnit</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Crisu83\Conversion\Quantity\DigitalInformation\Unit</span> <span class="pl-k">as</span> <span class="pl-c1">DIUnit</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Crisu83\Conversion\Size\HatSize\System</span> <span class="pl-k">as</span> <span class="pl-c1">HatSizeSystem</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Crisu83\Conversion\Size\ShoeSize\System</span> <span class="pl-k">as</span> <span class="pl-c1">ShoeSizeSystem</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">require</span>(<span class="pl-c1">dirname</span>(<span class="pl-c1">__DIR__</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>/vendor/autoload.php<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$length</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Length</span>(<span class="pl-c1">1</span>, <span class="pl-c1">LengthUnit</span><span class="pl-k">::</span><span class="pl-c1">METRE</span>);</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$length</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$length</span><span class="pl-k">-&gt;</span>add(<span class="pl-c1">1</span>, <span class="pl-c1">LengthUnit</span><span class="pl-k">::</span><span class="pl-c1">FOOT</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$length</span><span class="pl-k">-&gt;</span>add(<span class="pl-c1">5</span>)<span class="pl-k">-&gt;</span>sub(<span class="pl-c1">2</span>, <span class="pl-c1">LengthUnit</span><span class="pl-k">::</span><span class="pl-c1">FOOT</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$length</span><span class="pl-k">-&gt;</span>to(<span class="pl-c1">LengthUnit</span><span class="pl-k">::</span><span class="pl-c1">YARD</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$di</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">DigitalInformation</span>(<span class="pl-c1">1000</span>, <span class="pl-c1">DIUnit</span><span class="pl-k">::</span><span class="pl-c1">MEGABYTE</span>);</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$di</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$di</span><span class="pl-k">-&gt;</span>to(<span class="pl-c1">DIUnit</span><span class="pl-k">::</span><span class="pl-c1">BIT</span>)<span class="pl-k">-&gt;</span>out(<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">'</span>.<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$di</span><span class="pl-k">-&gt;</span>to(<span class="pl-c1">DIUnit</span><span class="pl-k">::</span><span class="pl-c1">GIGABIT</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$di</span><span class="pl-k">-&gt;</span>to(<span class="pl-c1">DIUnit</span><span class="pl-k">::</span><span class="pl-c1">TERABYTE</span>)<span class="pl-k">-&gt;</span>out(<span class="pl-c1">10</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$number</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">NumberBase</span>(<span class="pl-s"><span class="pl-pds">"</span>0xff<span class="pl-pds">"</span></span>, <span class="pl-c1">NumberBase</span><span class="pl-k">::</span><span class="pl-c1">HEXADECIMAL</span>);</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$number</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$number</span><span class="pl-k">-&gt;</span>to(<span class="pl-c1">NumberBase</span><span class="pl-k">::</span><span class="pl-c1">DECIMAL</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$number</span><span class="pl-k">-&gt;</span>to(<span class="pl-c1">NumberBase</span><span class="pl-k">::</span><span class="pl-c1">OCTAL</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$number</span><span class="pl-k">-&gt;</span>to(<span class="pl-c1">NumberBase</span><span class="pl-k">::</span><span class="pl-c1">BINARY</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$hatSize</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">HatSize</span>(<span class="pl-c1">40</span>, <span class="pl-c1">HatSizeSystem</span><span class="pl-k">::</span><span class="pl-c1">CENTIMETRE</span>);</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$hatSize</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$hatSize</span><span class="pl-k">-&gt;</span>to(<span class="pl-c1">HatSizeSystem</span><span class="pl-k">::</span><span class="pl-c1">AMERICAN</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$hatSize</span><span class="pl-k">-&gt;</span>to(<span class="pl-c1">HatSizeSystem</span><span class="pl-k">::</span><span class="pl-c1">BRITISH</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$hatSize</span><span class="pl-k">-&gt;</span>to(<span class="pl-c1">HatSizeSystem</span><span class="pl-k">::</span><span class="pl-c1">INCH</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$shoeSize</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">ChildShoeSize</span>(<span class="pl-c1">20</span>, <span class="pl-c1">ShoeSizeSystem</span><span class="pl-k">::</span><span class="pl-c1">EUROPEAN</span>);</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$shoeSize</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$shoeSize</span><span class="pl-k">-&gt;</span>to(<span class="pl-c1">ShoeSizeSystem</span><span class="pl-k">::</span><span class="pl-c1">AMERICAN</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$shoeSize</span><span class="pl-k">-&gt;</span>to(<span class="pl-c1">ShoeSizeSystem</span><span class="pl-k">::</span><span class="pl-c1">BRITISH</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$shoeSize</span><span class="pl-k">-&gt;</span>to(<span class="pl-c1">ShoeSizeSystem</span><span class="pl-k">::</span><span class="pl-c1">INCH</span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;br&gt;<span class="pl-pds">'</span></span>;</span></pre></div>
+
+<p>Sample output:</p>
+
+<pre><code>1.00 m
+1.30 m
+5.70 m
+6.23 yd
+
+1,000.00 MB
+8388629474.89 b
+7.81 Gb
+0.0009534451 TB
+
+0xff
+255
+o377
+b11111111
+
+40 cm
+4 US
+4 7/8 UK
+15.748 in
+
+20 EUR
+4.5 - 5 US
+3.5 - 4 UK
+4.625 in
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/crisu83/php-conversion">Php-conversion</a> is maintained by <a href="https://github.com/crisu83">crisu83</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
