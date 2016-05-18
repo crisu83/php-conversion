@@ -36,6 +36,7 @@ class Volume extends Quantity
         Unit::GALLON           => 0.00454609,
         Unit::QUART            => 0.00113652,
         Unit::PINT             => 0.000568261,
+        Unit::CUP              => 0.000284131,
         Unit::OUNCE            => 2.8413e-5,
         Unit::TABLESPOON       => 1.7758e-5,
         Unit::TEASPOON         => 5.9194e-6,
