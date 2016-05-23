@@ -64,7 +64,7 @@ abstract class Quantity
         $quantity = new static($quantity, $unit);
         /** @var Quantity $quantity */
         $quantity->to($this->unit);
-        $this->value += $quantity->getValue();
+        $this->value = bcadd($this->value, $quantity->getValue());
         return $this;
     }
 
@@ -83,7 +83,7 @@ abstract class Quantity
         $quantity = new static($quantity, $unit);
         /** @var Quantity $quantity */
         $quantity->to($this->unit);
-        $this->value -= $quantity->getValue();
+        $this->value = bcsub($this->value, $quantity->getValue());
         return $this;
     }
 
@@ -108,7 +108,7 @@ abstract class Quantity
      */
     protected function convert($from, $to, $value)
     {
-        return ($value * $this->getConversionRate($from)) / $this->getConversionRate($to);
+        return bcdiv(bcmul($value, $this->getConversionRate($from)), $this->getConversionRate($to));
     }
 
     /**
