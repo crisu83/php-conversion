@@ -19,6 +19,7 @@ use \Crisu83\Conversion\Quantity\Unit as BaseUnit;
 class Unit extends BaseUnit
 {
     const PASCAL                    = 'Pa';
+    const HECTOPASCAL               = 'hPa';
     const KILOPASCAL                = 'kPa';
     const MEGAPASCAL                = 'MPa';
     const BAR                       = 'bar';
