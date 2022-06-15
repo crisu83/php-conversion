@@ -28,6 +28,7 @@ class Pressure extends Quantity
      */
     protected static $conversionMap = array(
         Unit::PASCAL                    => 1,
+        Unit::HECTOPASCAL               => 100,
         Unit::KILOPASCAL                => 1000,
         Unit::MEGAPASCAL                => 1e6,
         Unit::BAR                       => 1e5,
